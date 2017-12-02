@@ -1,6 +1,6 @@
 package com.cenfotec.tramites;
 
-public abstract class Gestion{
+public  class Gestion{
 	Carrera carrera;
 	Form formulario;
 	
@@ -11,14 +11,18 @@ public abstract class Gestion{
 		this.formulario = formulario;
 	}
 
-	public String gestionarBeca() {
-		return null;
+	public void gestionarBeca(Form form, Carrera carrera) {
+		Registro becaRegistro = new Registro();
+		becaRegistro.gestionarBeca(form, carrera);
+		
+		
+		
 	}
 	
-	public String gestionarConvalidacion() {
+	public String gestionarConvalidacion(Form form, Carrera carrera) {
 		return null;
 	}
-	public String gestionarMatricula() {
+	public String gestionarMatricula(Form form, Carrera carrera) {
 		return null;
 	}
 	

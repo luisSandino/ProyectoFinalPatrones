@@ -10,6 +10,34 @@ public  class Gestion{
 		this.carrera = carrera;
 		this.formulario = formulario;
 	}
+	
+	public Gestion() {
+		
+	}
+
+	public Carrera getCarrera() {
+		return carrera;
+	}
+
+
+
+	public void setCarrera(Carrera carrera) {
+		this.carrera = carrera;
+	}
+
+
+
+	public Form getFormulario() {
+		return formulario;
+	}
+
+
+
+	public void setFormulario(Form formulario) {
+		this.formulario = formulario;
+	}
+
+
 
 	public void gestionarBeca(Form form, Carrera carrera) {
 		Registro becaRegistro = new Registro();

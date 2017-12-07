@@ -1,18 +1,18 @@
 package com.cenfotec.tramites;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Form {
 	private String nombre;
 	private String cedula;
 	private int periodo;
-	private Date fechaSolicitud;
-	public Form(String nombre, String cedula, int periodo, Date fechaSolicitud) {
+	private LocalDate fechaSolicitud;
+	public Form(String nombre, String cedula, int periodo, LocalDate fechaGestion) {
 		super();
 		this.nombre = nombre;
 		this.cedula = cedula;
 		this.periodo = periodo;
-		this.fechaSolicitud = fechaSolicitud;
+		this.fechaSolicitud = fechaGestion;
 	}
 	public String getNombre() {
 		return nombre;
@@ -32,10 +32,10 @@ public class Form {
 	public void setPeriodo(int periodo) {
 		this.periodo = periodo;
 	}
-	public Date getFechaSolicitud() {
+	public LocalDate getFechaSolicitud() {
 		return fechaSolicitud;
 	}
-	public void setFechaSolicitud(Date fechaSolicitud) {
+	public void setFechaSolicitud(LocalDate fechaSolicitud) {
 		this.fechaSolicitud = fechaSolicitud;
 	}
 	

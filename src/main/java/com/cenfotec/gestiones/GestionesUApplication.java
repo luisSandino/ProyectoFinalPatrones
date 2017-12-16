@@ -41,7 +41,7 @@ public class GestionesUApplication implements CommandLineRunner {
 	}
 	
 	public void menu() {
-		System.out.println("********ESCOGER OPCIÓN*********");
+		System.out.println("********--ESCOGER OPCIÓN--*********");
 		System.out.println("1.Solicitar Beca");
 		System.out.println("2.Solicitar Convalidación");
 		System.out.println("3.Solicitar Matrícula");
@@ -51,7 +51,7 @@ public class GestionesUApplication implements CommandLineRunner {
 
 	}
 	public void menuSecundario() {
-		System.out.println("********ESCOGER TIPO DE GESTIÓN*********");
+		System.out.println("********--ESCOGER TIPO DE GESTIÓN--*********");
 		System.out.println("1.Beca");
 		System.out.println("2.Convalidacion");
 		System.out.println("3.Matrícula");

@@ -22,6 +22,7 @@ public class Registro {
 			wr.append(form.getCedula());
 			wr.append(form.getFechaSolicitud().toString());
 			wr.append(carrera.getNombre());
+			wr.append("\nEsta gestion está en proceso");
 			wr.close();
 			bw.close();
 			
@@ -52,5 +53,9 @@ public class Registro {
 			System.out.println("Ha sucedido un error: "+e);
 		}
 		
+	}
+	public void gestionarCobro(Gestion gestion) {
+		Cobro cobros = new Cobro();
+		cobros.cobrar(gestion);
 	}
 }

@@ -29,7 +29,9 @@ public class Rectoria {
 			wr.append(form.getCedula());
 			wr.append(form.getFechaSolicitud().toString());
 			wr.append(carrera.getNombre());
+			wr.append("\nEsta gestion está en proceso");
 			wr.close();
+			bw.close();
 
 		} catch (Exception e) {
 			System.out.println("Ha sucedido un error: " + e);

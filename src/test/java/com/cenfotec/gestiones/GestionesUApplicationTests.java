@@ -11,6 +11,10 @@ public class GestionesUApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		
 	}
-
+	@Test
+	public void mostrarGestion() {
+		
+	}
 }

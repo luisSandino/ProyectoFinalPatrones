@@ -43,8 +43,8 @@ public class Gestion {
 
 	public void gestionarMatricula(Form form, Carrera carrera) {
 		Registro registro = new Registro();
-		registro.gestionarMatricula(form, carrera);
-	}
+		registro.gestionarMatricula(form, carrera);}
+		
 	
 	public void mostrarGestion(String cedula, int opcion) {
 		
@@ -60,6 +60,10 @@ public class Gestion {
 		case 3:
 			Registro matricula = new Registro();
 			matricula.mostrarGestion(cedula);
+			break;
+		case 4:
+			Cobro cobros = new Cobro();
+			cobros.mostrarGestion(cedula);
 			break;
 
 		default:

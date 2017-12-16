@@ -30,10 +30,10 @@ public class GestionesUApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 			
-		Gestion gestion = new Gestion();
+		
         
         while(true) {
-            executeAction(gestion);
+            executeAction();
         }
 			
 			
@@ -45,27 +45,36 @@ public class GestionesUApplication implements CommandLineRunner {
 		System.out.println("1.Solicitar Beca");
 		System.out.println("2.Solicitar Convalidación");
 		System.out.println("3.Solicitar Matrícula");
-		System.out.println("4.Listar estado de trámites ");
+		System.out.println("4.Ver trámites ");
 		System.out.println("3.Continuar con trámites");
 		System.out.println("4.Mostrar tramites finalizados ");
 
 	}
+	public void menuSecundario() {
+		System.out.println("********ESCOGER TIPO DE GESTIÓN*********");
+		System.out.println("1.Beca");
+		System.out.println("2.Convalidacion");
+		System.out.println("3.Matrícula");
+		
 
-	private void executeAction(Gestion gestion) throws Exception {
+	}
+
+	private void executeAction() throws Exception {
 		menu();
 		int opcion = Integer.parseInt(in.readLine());
 		switch (opcion) {
 		case 1:
-			gestionarBeca(gestion);
+			gestionarBeca();
 			break;
 		case 2:
-			gestionarConvalidacion(gestion);
+			gestionarConvalidacion();
 			;
 			break;
 		case 3:
-			gestionarMatricula(gestion);
+			gestionarMatricula();
 			break;
 		case 4:
+			listarGenstion();
 			break;
 		case 5:
 
@@ -81,7 +90,7 @@ public class GestionesUApplication implements CommandLineRunner {
 
 	}
 
-	public static void pedirInformacion() throws IOException {
+	public static Gestion pedirInformacion() throws IOException {
 		System.out.println("Ingrese el nombre del solicitante");
 		String nombre = in.readLine();
 		System.out.println("Ingrese la cédula del solicitante");
@@ -95,31 +104,65 @@ public class GestionesUApplication implements CommandLineRunner {
 		System.out.println("Ingrese el nombre de la carrera a gestionar");
 		String carreraNombre = in.readLine();
 		Carrera carrera = new Carrera(carreraNombre);
-		Gestion gestion = new Gestion(carrera, form);
+		Gestion gestionActual = new Gestion(carrera, form);
+		return gestionActual;
 		
 	}
 
-	public static void gestionarBeca(Gestion gestion) throws IOException {
-		pedirInformacion();
+	public  void gestionarBeca() throws IOException {
+		Gestion gestion = new Gestion();
+		gestion = pedirInformacion();
 		gestion.gestionarBeca(gestion.getFormulario(), gestion.getCarrera());
 		System.out.println("Gestión enviada a decanatura para revisión");
 
 	}
 
-	public void gestionarConvalidacion(Gestion gestion) throws IOException {
+	public void gestionarConvalidacion() throws IOException {
 
-		pedirInformacion();
+		Gestion gestion = new Gestion();
+		gestion = pedirInformacion();
 		gestion.gestionarConvalidacion(gestion.getFormulario(), gestion.getCarrera());
 		System.out.println("Gestión enviada a rectoría para revisión");
 
 	}
 
-	public void gestionarMatricula(Gestion gestion) throws IOException {
-		pedirInformacion();
+	public void gestionarMatricula() throws IOException {
+		Gestion gestion = new Gestion();
+		gestion = pedirInformacion();
 		gestion.gestionarMatricula(gestion.getFormulario(), gestion.getCarrera());
 		System.out.println("Gestión enviada a registro para revisión");
 
 		
+	}
+	public void listarGenstion() throws IOException {
+		menuSecundario();
+		int opcion = Integer.parseInt(in.readLine());
+		System.out.println("Ingrese la cédula del solicitante");
+		String cedula = in.readLine();
+		switch (opcion) {
+		case 1:
+			mostrar(cedula, opcion);
+			break;
+		case 2:
+			mostrar(cedula, opcion);
+			;
+			break;
+		case 3:
+			mostrar(cedula, opcion);
+			break;
+	
+
+		default:
+			System.out.println("Opcion invalida!");
+			break;
+		}
+		
+	}
+
+	private void mostrar(String cedula, int opcion) {
+		
+		Gestion gestion = new Gestion();
+		gestion.mostrarGestion(cedula, opcion);
 	}
 
 }
